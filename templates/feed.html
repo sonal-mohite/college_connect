@@ -1,0 +1,12 @@
+<h2>Welcome, {{ username }}!</h2> 
+<form method="POST"> 
+    <textarea name="content" placeholder="What's on your mind?" required></textarea><br> 
+    <button type="submit">Post</button> 
+</form> 
+ 
+<h3>Recent Posts</h3> 
+{% for post in posts %} 
+    <p><b>{{ post[0] }}</b>: {{ post[1] }}</p> 
+{% endfor %} 
+ 
+<br><a href="{{ url_for('logout') }}">Logout</a>
